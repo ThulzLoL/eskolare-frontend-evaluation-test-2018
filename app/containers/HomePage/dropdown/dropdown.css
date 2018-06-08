@@ -1,0 +1,9 @@
+.dropdown{
+    display: inline;
+}
+.dropdown .row{
+    padding-top: 10px;
+}
+.buttonDrop{
+    width: 100%;
+}
