@@ -1,21 +1,45 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- The first thing in any HTML file should be the charset -->
-    <meta charset="utf-8">
-    <!-- Make the page mobile compatible -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Allow installing the app to the homescreen -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="mobile-web-app-capable" content="yes">
-    <title>React.js Boilerplate</title>
-  </head>
-  <body>
-    <!-- Display a message if JS has been disabled on the browser. -->
-    <noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
-
-    <!-- The app hooks into this div -->
-    <div id="app"></div>
-    <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out webpackconfig.js if you want to know more) -->
-  </body>
+<head>
+  <!-- The first thing in any HTML file should be the charset -->
+  <meta charset="utf-8">
+  <!-- Make the page mobile compatible -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Allow installing the app to the homescreen -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="mobile-web-app-capable" content="yes">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="
+  518610540467-1878qcl4291u54ekvnhlqp79s1n7vvlk.apps.googleusercontent.com">
+  <title>React.js Boilerplate</title>
+</head>
+<body>
+  <script defer>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '2088035698150690',
+        cookie     : true,
+        xfbml      : true,
+        version    : '{latest-api-version}'
+      });
+      
+      FB.AppEvents.logPageView();   
+      
+    };
+    
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.0&appId=2088035698150690&autoLogAppEvents=1';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <!-- Display a message if JS has been disabled on the browser. -->
+  <noscript>If you're seeing this message, that means <strong>JavaScript has been disabled on your browser</strong>, please <strong>enable JS</strong> to make this app work.</noscript>
+  
+  <!-- The app hooks into this div -->
+  <div id="app"></div>
+  <!-- A lot of magic happens in this file. HtmlWebpackPlugin automatically includes all assets (e.g. bundle.js, main.css) with the correct HTML tags, which is why they are missing in this HTML file. Don't add any assets here! (Check out webpackconfig.js if you want to know more) -->
+</body>
 </html>

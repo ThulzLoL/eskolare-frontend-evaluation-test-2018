@@ -48,6 +48,7 @@ import ReactDataGrid from "react-data-grid";
 import Faker from "Faker";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Reactstrap from 'Reactstrap'
+import GoogleLogin from 'react-google-login';
 
 // Create redux store with history
 const initialState = {};
