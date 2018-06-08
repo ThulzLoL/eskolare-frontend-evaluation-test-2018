@@ -1,12 +1,14 @@
 import React from 'react';
-import DataGrid from './dataGrid/dataGrid'
+import DataGrid from './dataGrid/dataGrid';
+import FormAdd from './formAdd/formAdd';
 
 export default class MainPage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
     render() {
-      return (
-          <div>
-              <DataGrid />
-              </div>
-      );
+        return (
+            <div>
+            <FormAdd />
+            <DataGrid />
+            </div>
+        );
     }
-  }
+}
