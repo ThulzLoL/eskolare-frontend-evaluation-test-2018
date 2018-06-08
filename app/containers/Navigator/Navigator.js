@@ -25,10 +25,10 @@ export default class Navigator extends React.Component {
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>
-                <NavLink href="/main">MainPage</NavLink>
+                <NavLink href="/main">Database</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/out">LogOut</NavLink>
+                <NavLink href="/out">Pagina de Saida</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

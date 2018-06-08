@@ -3,7 +3,7 @@ import React from 'react';
 export default class FacebookLoginButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <div>
+            <div className="text-center">
             <div className="fb-login-button" 
             data-max-rows="1" 
             data-size="large" 

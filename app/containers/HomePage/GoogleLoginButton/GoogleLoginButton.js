@@ -7,7 +7,7 @@ export default class GoogleLoginButton extends React.PureComponent { // eslint-d
             console.log(response);
         }
         return (
-            <div>
+            <div className="text-center">
             <GoogleLogin
             clientId="309750495515-o0h9hp03r51fqk6g5l25vhd93v2h26vo.apps.googleusercontent.com"
             buttonText="Login"
