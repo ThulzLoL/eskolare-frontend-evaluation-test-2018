@@ -26,6 +26,9 @@ export default class DropDown extends Component {
           <Card>
             <CardBody>
                 <FacebookLoginButton />
+                <hr className="my-2" />
+                <div className="text-center"> -- ou -- </div>
+                <hr className="my-2" />
                 <GoogleLoginButton />
             </CardBody>
           </Card>
