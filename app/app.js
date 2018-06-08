@@ -44,6 +44,10 @@ import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
+import ReactDataGrid from "react-data-grid";
+import Faker from "Faker";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Reactstrap from 'Reactstrap'
 
 // Create redux store with history
 const initialState = {};
