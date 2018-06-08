@@ -45,7 +45,8 @@ import { translationMessages } from './i18n';
 // Import CSS reset and Global Styles
 import './global-styles';
 import ReactDataGrid from "react-data-grid";
-import Faker from "Faker";
+import ReactDataGridAddons from "react-data-grid-addons";
+import Faker from "faker";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Reactstrap from 'Reactstrap'
 import GoogleLogin from 'react-google-login';
