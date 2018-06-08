@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Card } from 'reactstrap';
+import { createPost } from '../../actions/postActions';
 
 export default class FormAdd extends React.Component {
     constructor(props) {
@@ -12,18 +13,31 @@ export default class FormAdd extends React.Component {
         };
         
         this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
     
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
+    onSubmit(e) {
+        e.preventDefault();
+    
+        const post = {
+          nome: this.state.nome,
+          sobrenome: this.state.sobrenome,
+          CEP: this.state.CEP,
+          email: this.state.email
+        };
+    
+        this.props.createPost(post);
+      }
     render() {
         return (
             <Row>
             <Col></Col>
             <Col>
             <Card>
-            <Form>
+            <Form onSubmit={this.onSubmit}>
             <div className="text-center">Envie o seu tambem!!</div>
             <FormGroup className="text-center">
             <Label for="nome">Nome</Label>
