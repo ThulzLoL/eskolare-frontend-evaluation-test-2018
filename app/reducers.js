@@ -5,6 +5,7 @@
 import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
 import { LOCATION_CHANGE } from 'react-router-redux';
+import { GET_POSTS, NEW_POST } from './containers/actions/types';
 
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 
@@ -36,11 +37,34 @@ function routeReducer(state = routeInitialState, action) {
   }
 }
 
+const initialState = {
+  items: [],
+  item: {}
+};
+
+function postReducer(state = initialState, action) {
+  switch (action.type) {
+    case GET_POSTS:
+      return {
+        ...state,
+        items: action.payload
+      };
+    case NEW_POST:
+      return {
+        ...state,
+        item: action.payload
+      };
+    default:
+      return state;
+  }
+}
+
 /**
  * Creates the main reducer with the dynamically injected ones
  */
 export default function createReducer(injectedReducers) {
   return combineReducers({
+    post: postReducer,
     route: routeReducer,
     language: languageProviderReducer,
     ...injectedReducers,
