@@ -21,16 +21,16 @@ export default class FormAdd extends React.Component {
     }
     onSubmit(e) {
         e.preventDefault();
-    
+        
         const post = {
-          nome: this.state.nome,
-          sobrenome: this.state.sobrenome,
-          CEP: this.state.CEP,
-          email: this.state.email
+            nome: this.state.nome,
+            sobrenome: this.state.sobrenome,
+            CEP: this.state.CEP,
+            email: this.state.email
         };
-    
+        
         this.props.createPost(post);
-      }
+    }
     render() {
         return (
             <Row>

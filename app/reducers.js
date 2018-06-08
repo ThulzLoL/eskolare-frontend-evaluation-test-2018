@@ -1,6 +1,6 @@
 /**
- * Combine all reducers in this file and export the combined reducers.
- */
+* Combine all reducers in this file and export the combined reducers.
+*/
 
 import { combineReducers } from 'redux-immutable';
 import { fromJS } from 'immutable';
@@ -10,12 +10,12 @@ import { GET_POSTS, NEW_POST } from './containers/actions/types';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 
 /*
- * routeReducer
- *
- * The reducer merges route location changes into our immutable state.
- * The change is necessitated by moving to react-router-redux@4
- *
- */
+* routeReducer
+*
+* The reducer merges route location changes into our immutable state.
+* The change is necessitated by moving to react-router-redux@4
+*
+*/
 
 // Initial routing state
 const routeInitialState = fromJS({
@@ -23,17 +23,17 @@ const routeInitialState = fromJS({
 });
 
 /**
- * Merge route into the global application state
- */
+* Merge route into the global application state
+*/
 function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
-      return state.merge({
-        location: action.payload,
-      });
+    return state.merge({
+      location: action.payload,
+    });
     default:
-      return state;
+    return state;
   }
 }
 
@@ -45,23 +45,23 @@ const initialState = {
 function postReducer(state = initialState, action) {
   switch (action.type) {
     case GET_POSTS:
-      return {
-        ...state,
-        items: action.payload
-      };
+    return {
+      ...state,
+      items: action.payload
+    };
     case NEW_POST:
-      return {
-        ...state,
-        item: action.payload
-      };
+    return {
+      ...state,
+      item: action.payload
+    };
     default:
-      return state;
+    return state;
   }
 }
 
 /**
- * Creates the main reducer with the dynamically injected ones
- */
+* Creates the main reducer with the dynamically injected ones
+*/
 export default function createReducer(injectedReducers) {
   return combineReducers({
     post: postReducer,
