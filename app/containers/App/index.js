@@ -18,10 +18,12 @@ import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import OutPage from 'containers/OutPage/OutPage'
 import MainPage from 'containers/MainPage/MainPage'
+import Navigator from 'containers/Navigator/Navigator';
 
 export default function App() {
   return (
     <div>
+      <Navigator />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/main" component={MainPage} />
