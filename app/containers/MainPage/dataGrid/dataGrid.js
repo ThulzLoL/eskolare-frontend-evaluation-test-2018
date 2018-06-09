@@ -74,7 +74,6 @@ class DataGrid extends React.Component {
 
         
 
-        console.log(this.state.rows);
         this.props.onSubmit(post);
 
         const post2 = [{
@@ -87,6 +86,9 @@ class DataGrid extends React.Component {
 
         const currentRow = this.state.rows;
         const newRow = currentRow.pop();
+        for(let i in currentRow){
+            currentRow[i].id++
+        };
         const newRow2 = post2.concat(currentRow); 
         this.setState({ rows: newRow2 })
     }
