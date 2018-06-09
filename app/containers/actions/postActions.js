@@ -1,11 +1,13 @@
 import { GET_POSTS, NEW_POST } from './types';
 
-export const getPosts = () => {
-      dispatch({
+export function createAll(posts) {
+    return {
         type: GET_POSTS,
         payload: posts
-    })
+    }
 }
+
+export const createPosts = posts => dispatch(createAll(posts));
 
 export function createTo(post) {
     return {

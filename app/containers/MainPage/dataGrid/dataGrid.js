@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ReactDataGrid from 'react-data-grid';
 const { Toolbar, Data: { Selectors } } = require('react-data-grid-addons');
 import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Card } from 'reactstrap';
-import { createPost, createTo } from '../../actions/postActions';
+import { createPost, createTo, createAll } from '../../actions/postActions';
 import { connect } from 'react-redux';
 
 class DataGrid extends React.Component {
@@ -43,6 +43,7 @@ class DataGrid extends React.Component {
         ];
         
         this.state = { 
+
             nome: '',
             sobrenome: '',
             CEP: '',
@@ -105,9 +106,10 @@ class DataGrid extends React.Component {
                 Nome: Faker.name.firstName(),
                 Sobrenome: Faker.name.lastName(),
                 CEP: Faker.address.zipCode(),
-                email: Faker.internet.email()   
+                email: Faker.internet.email(),  
             });
         }
+        this.props.createPosts(rows);
         return rows;
     };
     
@@ -198,7 +200,8 @@ class DataGrid extends React.Component {
         email: state.email,
     });
     const MapActionsToProps = {
-        onSubmit: createTo
+        onSubmit: createTo,
+        createPosts: createAll
     };
 
     export default connect(MapStateToProps, MapActionsToProps)(DataGrid);

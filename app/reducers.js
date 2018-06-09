@@ -52,7 +52,7 @@ function postReducer(state = initialState, action) {
     case NEW_POST:
     return {
       ...state,
-      item: action.payload
+      item: [...state.item, action.payload]
     };
     default:
     return state;
