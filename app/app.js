@@ -1,9 +1,9 @@
 /**
- * app.js
- *
- * This is the entry file for the application, only setup and boilerplate
- * code.
- */
+* app.js
+*
+* This is the entry file for the application, only setup and boilerplate
+* code.
+*/
 
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
@@ -60,11 +60,11 @@ const MOUNT_NODE = document.getElementById('app');
 const render = (messages) => {
   ReactDOM.render(
     <Provider store={store}>
-      <LanguageProvider messages={messages}>
-        <ConnectedRouter history={history}>
-          <App />
-        </ConnectedRouter>
-      </LanguageProvider>
+    <LanguageProvider messages={messages}>
+    <ConnectedRouter history={history}>
+    <App />
+    </ConnectedRouter>
+    </LanguageProvider>
     </Provider>,
     MOUNT_NODE
   );
@@ -85,13 +85,13 @@ if (!window.Intl) {
   (new Promise((resolve) => {
     resolve(import('intl'));
   }))
-    .then(() => Promise.all([
-      import('intl/locale-data/jsonp/en.js'),
-    ]))
-    .then(() => render(translationMessages))
-    .catch((err) => {
-      throw err;
-    });
+  .then(() => Promise.all([
+    import('intl/locale-data/jsonp/en.js'),
+  ]))
+  .then(() => render(translationMessages))
+  .catch((err) => {
+    throw err;
+  });
 } else {
   render(translationMessages);
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Card } from 'reactstrap';
-import { createPost } from '../../actions/postActions';
+import { createPost, createTo } from '../../actions/postActions';
 
 export default class FormAdd extends React.Component {
     constructor(props) {
