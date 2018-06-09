@@ -42,7 +42,7 @@ class FormAdd extends React.Component {
             <div className="text-center">Envie o seu tambem!!</div>
             <FormGroup className="text-center">
             <Label for="nome">Nome</Label>
-            <Input type="nome" name="nome" onChange={this.onChange} value={this.state.title} id="exampleEmail" placeholder="Nome" />
+            <Input type="nome" name="nome" onChange={this.onChange} value={this.state.title} id="nome" placeholder="Nome" />
             </FormGroup>
             <FormGroup className="text-center">
             <Label for="sobrenome">Sobrenome</Label>
@@ -53,8 +53,8 @@ class FormAdd extends React.Component {
             <Input type="CEP" name="CEP" onChange={this.onChange} value={this.state.title} id="CEP" placeholder="CEP" />
             </FormGroup>
             <FormGroup className="text-center">
-            <Label for="Email">Email</Label>
-            <Input type="email" name="Email" onChange={this.onChange} value={this.state.title} id="Email" placeholder="Email" />
+            <Label for="email">Email</Label>
+            <Input type="email" name="email" onChange={this.onChange} value={this.state.title} id="email" placeholder="Email" />
             </FormGroup>
             <FormGroup>
             <Button color="primary" type="submit" size="lg" block>Enviar</Button>
@@ -72,7 +72,7 @@ const MapStateToProps = state => ({
     nome: state.nome,
     sobrenome: state.sobrenome,
     CEP: state.CEP,
-    email: state.email
+    email: state.email,
 });
 const MapActionsToProps = {
     onSubmit: createTo
