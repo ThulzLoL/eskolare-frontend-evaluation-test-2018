@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText, Row, Col, Card } from 'reactstrap';
 import { createPost, createTo } from '../../actions/postActions';
+import { connect } from 'react-redux';
 
-export default class FormAdd extends React.Component {
+class FormAdd extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,7 +30,7 @@ export default class FormAdd extends React.Component {
             email: this.state.email
         };
         
-        this.props.createPost(post);
+        this.props.onSubmit(post);
     }
     render() {
         return (
@@ -66,3 +67,15 @@ export default class FormAdd extends React.Component {
         )
     }
 }
+
+const MapStateToProps = state => ({
+    nome: state.nome,
+    sobrenome: state.sobrenome,
+    CEP: state.CEP,
+    email: state.email
+});
+const MapActionsToProps = {
+    onSubmit: createTo
+};
+
+export default connect(MapStateToProps, MapActionsToProps)(FormAdd);
