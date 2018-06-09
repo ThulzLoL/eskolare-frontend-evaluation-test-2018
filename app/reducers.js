@@ -39,7 +39,7 @@ function routeReducer(state = routeInitialState, action) {
 
 const initialState = {
   items: [],
-  item: {}
+  item: []
 };
 
 function postReducer(state = initialState, action) {

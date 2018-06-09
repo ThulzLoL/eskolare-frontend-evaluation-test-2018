@@ -71,6 +71,12 @@ class DataGrid extends React.Component {
             CEP: this.state.CEP,
             email: this.state.email
         };
+
+        
+
+        console.log(this.state.rows);
+        this.props.onSubmit(post);
+
         const post2 = [{
             id: 1,
             Nome: this.state.nome,
@@ -78,8 +84,6 @@ class DataGrid extends React.Component {
             CEP: this.state.CEP,
             email: this.state.email
         }];
-        console.log(this.state.rows);
-        this.props.onSubmit(post);
 
         const currentRow = this.state.rows;
         const newRow = currentRow.pop();
