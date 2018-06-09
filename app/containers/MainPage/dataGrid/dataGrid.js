@@ -82,7 +82,7 @@ class DataGrid extends React.Component {
         this.props.onSubmit(post);
 
         const currentRow = this.state.rows;
-        const newRow = currentRow.shift();
+        const newRow = currentRow.pop();
         const newRow2 = post2.concat(currentRow); 
         this.setState({ rows: newRow2 })
     }
