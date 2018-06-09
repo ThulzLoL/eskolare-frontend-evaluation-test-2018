@@ -12,6 +12,7 @@ export function createTo(post) {
       type: NEW_POST,
       payload: post
     }
+
   }
 
 export const createPost = post => dispatch(createTo(post));

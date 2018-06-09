@@ -57,6 +57,8 @@ class DataGrid extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     
     }
+
+
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
@@ -69,22 +71,20 @@ class DataGrid extends React.Component {
             CEP: this.state.CEP,
             email: this.state.email
         };
-        
+        const post2 = [{
+            id: 1,
+            Nome: this.state.nome,
+            Sobrenome: this.state.sobrenome,
+            CEP: this.state.CEP,
+            email: this.state.email
+        }];
+        console.log(this.state.rows);
         this.props.onSubmit(post);
 
-        handleAddRow = ({ newRowIndex }) => {
-            const newRow = {
-              id:1,
-              nome: this.state.nome,
-              sobrenome: '',
-              CEP: '',
-              email: ''
-            };
-        
-            let rows = this.state.rows.slice();
-            rows = update(rows, {$push: [newRow]});
-            this.setState({ rows });
-          };
+        const currentRow = this.state.rows;
+        const newRow = currentRow.shift();
+        const newRow2 = post2.concat(currentRow); 
+        this.setState({ rows: newRow2 })
     }
     
     getRandomDate = (start, end) => {
