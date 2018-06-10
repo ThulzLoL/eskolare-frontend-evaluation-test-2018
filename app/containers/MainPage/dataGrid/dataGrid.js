@@ -76,6 +76,7 @@ class DataGrid extends React.Component {
         
 
         this.props.onSubmit(post);
+        console.log(this.props.nome)
 
         const post2 = [{
             id: 1,

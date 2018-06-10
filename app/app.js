@@ -50,6 +50,7 @@ import Faker from "faker";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Reactstrap from 'Reactstrap'
 import GoogleLogin from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 // Create redux store with history
 const initialState = {};

@@ -1,6 +1,9 @@
 import React from 'react';
 
 export default class FacebookLoginButton extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+    componentDidMount() {
+        document.addEventListener('fb_init', e => FB.XFBML.parse());
+    }
     render() {
         return (
             <div className="text-center">
